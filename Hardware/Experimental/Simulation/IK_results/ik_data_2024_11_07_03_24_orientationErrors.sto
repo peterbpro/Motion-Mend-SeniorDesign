@@ -1,0 +1,7 @@
+name=OrientationErrors
+DataType=double
+version=3
+OpenSimVersion=4.5.1
+endheader
+time	pelvis_imu	femur_r_imu	tibia_r_imu	femur_l_imu	tibia_l_imu
+0	0.0003966008409463873	0.0048806306216953	0.004729022747374766	0.004856042688934551	0.004752221832260143

@@ -1,0 +1,8 @@
+inDegrees=yes
+name=ik_data_2024_11_07_03_24
+DataType=double
+version=3
+OpenSimVersion=4.5.1
+endheader
+time	pelvis_tilt	pelvis_list	pelvis_rotation	pelvis_tx	pelvis_ty	pelvis_tz	hip_flexion_r	hip_adduction_r	hip_rotation_r	knee_angle_r	knee_angle_r_beta	ankle_angle_r	subtalar_angle_r	mtp_angle_r	hip_flexion_l	hip_adduction_l	hip_rotation_l	knee_angle_l	knee_angle_l_beta	ankle_angle_l	subtalar_angle_l	mtp_angle_l	lumbar_extension	lumbar_bending	lumbar_rotation	arm_flex_r	arm_add_r	arm_rot_r	elbow_flex_r	pro_sup_r	wrist_flex_r	wrist_dev_r	arm_flex_l	arm_add_l	arm_rot_l	elbow_flex_l	pro_sup_l	wrist_flex_l	wrist_dev_l
+0	0.02264979349417319	-0.001164111241964198	159.3820382076212	0	0.9399999999999999	0	0.2907669389346673	-0.001692215211173595	-0.07395929584026111	0.5153001911468503	0.008993684971668673	-1.863597405698758	0	0	0.2885854978412807	-0.01709638672355097	-0.07901781860091228	0.5152760239165012	0.008993263173927993	-1.863597405698758	0	0	0	0	0	0	-1.225374219234646	0	17.30217704003621	17.20915156998055	0	0	0	-1.225374219234646	0	17.30217704003621	17.20915156998055	0	0

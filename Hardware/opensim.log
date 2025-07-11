@@ -1,0 +1,32 @@
+[2024-12-04 22:33:45.228] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-04 22:33:45.253] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_04_22_15.sto'...
+[2024-12-04 22:33:45.727] [info] InverseKinematicsSolver found 3 model frames to track.
+[2024-12-04 22:38:47.718] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-04 22:38:47.732] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_04_22_36.sto'...
+[2024-12-04 22:38:48.190] [info] InverseKinematicsSolver found 2 model frames to track.
+[2024-12-04 22:38:58.268] [info] Wrote IK with IMU tracking results to: 'ik_data_2024_12_04_22_36.mot'.
+[2024-12-04 22:44:26.363] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-04 22:44:26.378] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_04_22_42.sto'...
+[2024-12-04 22:44:26.851] [info] InverseKinematicsSolver found 3 model frames to track.
+[2024-12-04 22:58:54.870] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-04 22:58:54.896] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_04_22_57.sto'...
+[2024-12-04 22:58:55.374] [info] InverseKinematicsSolver found 5 model frames to track.
+[2024-12-04 22:59:05.551] [info] Wrote IK with IMU tracking results to: 'ik_data_2024_12_04_22_57.mot'.
+[2024-12-04 23:02:45.549] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-04 23:02:45.585] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_04_22_57.sto'...
+[2024-12-04 23:02:46.038] [info] InverseKinematicsSolver found 5 model frames to track.
+[2024-12-04 23:02:56.228] [info] Wrote IK with IMU tracking results to: 'ik_data_2024_12_04_22_57.mot'.
+[2024-12-04 23:03:35.574] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-04 23:03:35.615] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_04_22_15.sto'...
+[2024-12-04 23:03:36.107] [info] InverseKinematicsSolver found 5 model frames to track.
+[2024-12-05 15:56:19.884] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-05 15:56:19.898] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_05_15_55.sto'...
+[2024-12-05 15:56:20.164] [info] InverseKinematicsSolver found 5 model frames to track.
+[2024-12-05 15:58:41.629] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-05 15:58:41.637] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_05_15_57.sto'...
+[2024-12-05 15:58:41.851] [info] InverseKinematicsSolver found 5 model frames to track.
+[2024-12-05 15:58:51.913] [info] Wrote IK with IMU tracking results to: 'ik_data_2024_12_05_15_57.mot'.
+[2024-12-05 16:00:05.337] [info] Loaded model Rajagopal_2015 from file c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\models\calibrated_model.osim
+[2024-12-05 16:00:05.359] [info] Loading orientations as quaternions from 'c:\Users\kenzo\Documents\SENIOR DESIGN\MotionMend\Hardware\Experimental\Simulation\data\data_2024_12_05_15_59.sto'...
+[2024-12-05 16:00:05.607] [info] InverseKinematicsSolver found 5 model frames to track.
+[2024-12-05 16:00:15.685] [info] Wrote IK with IMU tracking results to: 'ik_data_2024_12_05_15_59.mot'.

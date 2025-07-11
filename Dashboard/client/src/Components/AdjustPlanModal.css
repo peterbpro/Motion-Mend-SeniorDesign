@@ -1,0 +1,221 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 90%;
+    max-width: 500px;
+    animation: slideInUp 0.3s ease;
+    max-height: 80vh;
+    /* Limit height */
+    overflow-y: auto;
+    /* Add scroll if content overflows */
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--neutral-800);
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neutral-200);
+}
+
+/* Basic styles for form elements within the modal */
+.modal-content .form-group {
+    margin-bottom: 1rem;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--neutral-700);
+}
+
+.modal-content input[type="number"],
+.modal-content input[type="text"],
+.modal-content select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.modal-content input:focus {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+.modal-content .hint {
+    font-size: 0.8rem;
+    color: var(--neutral-500);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.modal-content .error-message {
+    color: var(--error-700);
+    background-color: var(--error-50);
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Basic button styles - assuming you have global ones, but defining specifics */
+.modal-content .button-primary {
+    background-color: var(--primary-500);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.modal-content .button-primary:hover {
+    background-color: var(--primary-600);
+}
+
+.modal-content .button-primary:disabled {
+    background-color: var(--neutral-300);
+    cursor: not-allowed;
+}
+
+.modal-content .button-secondary {
+    background-color: var(--neutral-200);
+    color: var(--neutral-700);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.modal-content .button-secondary:hover {
+    background-color: var(--neutral-300);
+}
+
+.modal-content .button-secondary:disabled {
+    background-color: var(--neutral-100);
+    color: var(--neutral-400);
+    cursor: not-allowed;
+}
+
+/* Styles for the goals editor */
+.daily-goals-editor {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--neutral-200);
+}
+
+.daily-goals-editor h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--neutral-700);
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    max-height: 300px;
+    /* Limit height and make scrollable */
+    overflow-y: auto;
+    padding: 0.5rem;
+    background-color: var(--neutral-50);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+.goal-input-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.goal-input-item label {
+    font-size: 0.8rem;
+    color: var(--neutral-600);
+    margin-bottom: 0;
+}
+
+.goal-input-item input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.button-add-week {
+    background: none;
+    border: 1px dashed var(--primary-400);
+    color: var(--primary-600);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.button-add-week:hover {
+    background-color: var(--primary-50);
+    border-style: solid;
+}
+
+.hold-time-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hold-time-input {
+    width: 80px !important;
+    /* Override default width */
+}
+
+/* Keyframes if not defined globally */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

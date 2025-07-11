@@ -1,0 +1,85 @@
+.patient-card {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: var(--transition-all);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+.patient-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-400), var(--primary-600));
+    opacity: 0;
+    transition: var(--transition-all);
+}
+
+.patient-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-200);
+    box-shadow: var(--shadow-lg);
+}
+
+.patient-card:hover::before {
+    opacity: 1;
+}
+
+.patient-card-content h3 {
+    color: var(--neutral-800);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.patient-card-content .username {
+    color: var(--neutral-600);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    background-color: var(--neutral-100);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.patient-card-content p {
+    color: var(--neutral-600);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.patient-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neutral-100);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-600);
+    margin-top: 0.25rem;
+}

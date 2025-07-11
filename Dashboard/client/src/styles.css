@@ -1,0 +1,22 @@
+
+/* styles.css */
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+li {
+    color: white;
+    cursor: pointer;
+}
+
+li.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}

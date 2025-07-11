@@ -1,0 +1,351 @@
+/* Page container: centers the card and adds top space for the fixed header */
+.add-patient-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 8rem;
+    /* Increased from 6rem to 8rem to move box further down */
+    padding-bottom: 3rem;
+    background: var(--gradient-subtle);
+}
+
+/* The main form card with better spacing and shadow */
+.onboarding-container {
+    width: 100%;
+    max-width: 600px;
+    /* narrower for better vertical flow */
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem 2rem 2.5rem;
+    margin: 0 1rem;
+    /* side margin for smaller screens */
+    position: relative;
+    /* Added to make positioning of back button work */
+}
+
+/* Top row: step labels in the same horizontal line */
+.top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Repositioned back button to be outside the form card, top left */
+.back-button {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-600);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-button:hover {
+    color: var(--primary-700);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Step labels inline */
+.step-labels {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.875rem;
+    color: var(--neutral-500);
+    margin: 0 auto;
+    /* Center the step labels */
+}
+
+.step-labels .active {
+    color: var(--primary-600);
+    font-weight: 600;
+}
+
+/* Progress bar + fill */
+.progress-bar {
+    height: 6px;
+    background: var(--neutral-200);
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-500);
+    transition: width 0.3s ease;
+}
+
+/* Animations for step content */
+.step-content {
+    animation: slideInUp 0.3s ease;
+}
+
+/* Basic form styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--neutral-700);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Buttons row */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.next-button,
+.prev-button,
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Color-coded buttons */
+.next-button,
+.submit-button {
+    background: var(--primary-500);
+    color: white;
+}
+
+.prev-button {
+    background: var(--neutral-200);
+    color: var(--neutral-700);
+}
+
+.next-button:hover,
+.submit-button:hover {
+    background: var(--primary-600);
+    transform: translateY(-2px);
+}
+
+.prev-button:hover {
+    background: var(--neutral-300);
+    transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+    background: var(--neutral-400);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Success message box */
+.success-message {
+    background-color: var(--success-50);
+    color: var(--success-700);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    text-align: center;
+    animation: slideInUp 0.5s ease forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.success-message i {
+    font-size: 2rem;
+    color: var(--success-500);
+    margin-bottom: 0.5rem;
+}
+
+.success-message p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--success-600);
+}
+
+/* Credentials display after success */
+.credentials-card {
+    background: var(--neutral-50);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    animation: slideInUp 0.3s ease;
+    border: 1px solid var(--primary-200);
+}
+
+.credentials-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+    border: 1px solid var(--primary-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.credentials-info p {
+    margin: 0.75rem 0;
+    font-family: monospace;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.credentials-note {
+    color: var(--neutral-600);
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--primary-50);
+    border-radius: var(--radius);
+    line-height: 1.5;
+}
+
+.return-dashboard-button {
+    background: var(--primary-500);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.return-dashboard-button:hover {
+    background: var(--primary-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.redirect-message {
+    color: var(--neutral-600);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Treatment angles */
+.daily-angles-grid {
+    background: var(--neutral-50);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+}
+
+.daily-angles-grid h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--neutral-700);
+}
+
+.hint {
+    color: var(--neutral-600);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.angles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+}
+
+.daily-angle-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.daily-angle-input label {
+    font-size: 0.85rem;
+    color: var(--neutral-600);
+}
+
+.daily-angle-input input {
+    padding: 0.5rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+}
+
+.daily-angle-input input:focus {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .add-patient-page {
+        padding-top: 7rem;
+    }
+
+    .onboarding-container {
+        padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .back-button {
+        top: -45px;
+        left: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .daily-angles-grid {
+        padding: 1rem;
+    }
+
+    .angles-container {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 0.75rem;
+    }
+}

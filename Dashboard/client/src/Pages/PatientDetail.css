@@ -1,0 +1,786 @@
+.patient-detail-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(to bottom, var(--neutral-50), var(--neutral-100));
+}
+
+/* Add a header section for the title and back button */
+.detail-header {
+    position: relative;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--neutral-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.detail-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: rotate(30deg);
+}
+
+.detail-header h1 {
+    color: #284d69;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 0.5s ease forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.measurements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.date-section {
+    background: var(--surface-card);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+.date-section:last-child {
+    margin-bottom: 0;
+}
+
+.date-header {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.date-section:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.date-section h2 {
+    background: linear-gradient(to right, var(--neutral-50), white);
+    padding: 1.25rem 1.5rem;
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--neutral-800);
+    border-bottom: 1px solid var(--neutral-200);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.date-section:hover h2 {
+    color: var(--primary-700);
+}
+
+.date-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--primary-400);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.date-section:hover h2::before {
+    opacity: 1;
+}
+
+.measurements-table-wrapper {
+    padding: 1rem;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+}
+
+th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-400);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+th:hover::after {
+    transform: scaleX(1);
+}
+
+td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--neutral-100);
+    color: var(--neutral-700);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.back-button {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--neutral-600);
+    background: transparent;
+    border: 1px solid var(--neutral-200);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: var(--neutral-50);
+    color: var(--primary-600);
+    transform: translateY(-50%) translateX(-2px);
+}
+
+.error-message {
+    background-color: var(--error-50);
+    color: var(--error-500);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.timestamp {
+    color: var(--primary-600);
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 0.875rem;
+}
+
+tr {
+    transition: all 0.2s ease;
+}
+
+tr:hover {
+    background: var(--primary-50);
+    transform: translateX(5px);
+}
+
+/* Angle measurements styling */
+td:nth-child(2),
+td:nth-child(3) {
+    font-weight: 500;
+}
+
+/* Add data visualization hints */
+td:nth-child(2),
+td:nth-child(3) {
+    position: relative;
+}
+
+td:nth-child(2)::after,
+td:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary-200);
+    border-radius: 2px;
+    opacity: 0.5;
+    transition: var(--transition-all);
+}
+
+tr:hover td::after {
+    opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .patient-detail-container {
+        padding: 1rem;
+    }
+
+    .detail-header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .date-section h2 {
+        padding: 1rem;
+        font-size: 1.125rem;
+    }
+
+    .back-button {
+        position: static;
+        transform: none;
+    }
+
+    .back-button:hover {
+        transform: translateX(-2px);
+    }
+
+    .patient-name {
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    td,
+    th {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Loading state animations */
+.skeleton-loading {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(90deg,
+            var(--neutral-100) 0%,
+            var(--neutral-200) 50%,
+            var(--neutral-100) 100%);
+    background-size: 200% 100%;
+}
+
+/* Remove the patient summary styles */
+.patient-summary,
+.summary-stat,
+.stat-label,
+.stat-value {
+    display: none;
+}
+
+/* Animate date sections */
+.date-section:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.date-section:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.date-section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.date-section:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+/* Improved angle bars */
+.angle-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--primary-300), var(--primary-500));
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+tr:hover .angle-bar {
+    opacity: 0.7;
+    height: 8px;
+}
+
+/* Add subtle scroll indicator */
+.measurements-table-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--primary-300));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.measurements-table-wrapper:hover::after {
+    opacity: 0.7;
+}
+
+.page-container {
+    padding: 80px 2rem 2rem;
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.patient-detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--neutral-50);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.patient-name {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+}
+
+.date-section {
+    padding: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.date-section:last-child {
+    border-bottom: none;
+}
+
+.date-header {
+    color: rgb(15, 32, 43);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.measurements-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.measurements-table th,
+.measurements-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.measurements-table th {
+    background: var(--neutral-50);
+    font-weight: 600;
+    color: var(--neutral-700);
+}
+
+.angle-cell {
+    min-width: 200px;
+}
+
+.angle-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.angle-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--primary-500);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.angle-bar.success {
+    background: var(--success-500);
+}
+
+tr:hover .angle-bar {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 70px 1rem 1rem;
+    }
+
+    .detail-header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .date-section {
+        padding: 1rem;
+        margin: 0 -1rem 1rem -1rem;
+        border-radius: 0;
+    }
+
+    .measurements-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .back-button {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .patient-name {
+        padding: 1.5rem 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* Add these new styles */
+.progress-analytics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.analytics-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.analytics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.analytics-card h3 {
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    color: var(--neutral-800);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--radius);
+    position: relative;
+    height: 350px;
+    width: 100%;
+    max-width: 700px;
+    /* Slightly larger than chart width to account for padding */
+    margin: 0 auto 2rem;
+    border: 1px solid var(--neutral-200);
+}
+
+.line-chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure SVG maintains aspect ratio */
+.line-chart-wrapper svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.line-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.axis-label {
+    font-size: 0.9rem;
+    fill: var(--neutral-700);
+    font-weight: 600;
+    transform: translateY(-5px);
+}
+
+.tick-label {
+    font-size: 0.85rem;
+    fill: var(--neutral-600);
+    font-weight: 500;
+}
+
+.data-point {
+    transition: r 0.2s ease, stroke-width 0.2s ease;
+    cursor: pointer;
+}
+
+.data-point:hover {
+    r: 6;
+    stroke-width: 2;
+}
+
+.session-table {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.session-table h3 {
+    margin: 0 0 2rem 0;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.session-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.session-table th {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid var(--surface-border);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.session-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--surface-border);
+    color: var(--text-color-secondary);
+}
+
+.angle-cell {
+    width: 200px;
+}
+
+.angle-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.angle-bar {
+    height: 6px;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .progress-analytics {
+        grid-template-columns: 1fr;
+    }
+
+    .session-table {
+        overflow-x: auto;
+    }
+
+    .angle-cell {
+        width: 150px;
+    }
+
+    .chart-container {
+        height: 300px;
+        padding: 1rem;
+    }
+
+    .axis-label {
+        font-size: 0.8rem;
+    }
+
+    .tick-label {
+        font-size: 0.75rem;
+    }
+}
+
+/* Add styles for the no-data message */
+.no-data-message {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-data-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: var(--primary-50);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--primary-600);
+}
+
+.no-data-title {
+    color: var(--neutral-800);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.no-data-text {
+    color: var(--neutral-600);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.no-data-steps {
+    background-color: var(--neutral-50);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.no-data-steps h3 {
+    color: var(--neutral-700);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.no-data-steps ol {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.no-data-steps li {
+    color: var(--neutral-600);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.no-data-subtitle {
+    color: var(--primary-600);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Add styles for the Adjust Plan button */
+.adjust-plan-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.75rem 1.25rem;
+    background-color: var(--primary-600);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.adjust-plan-button:hover {
+    background-color: var(--primary-700);
+    transform: translateY(-50%) translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Minimalist Back Button */
+.back-button-minimalist {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--neutral-500);
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-button-minimalist svg {
+    width: 20px;
+    height: 20px;
+}
+
+.back-button-minimalist:hover {
+    color: var(--primary-600);
+    transform: translateY(-50%) scale(1.1);
+    text-decoration: none;
+}
+
+/* Ensure legend labels are visible and styled */
+.legend-label {
+    font-size: 0.85rem;
+    fill: var(--neutral-700);
+    font-weight: 500;
+}
+
+/* Add a subtle background to the legend group for better contrast */
+.chart-legend {
+    fill: white;
+    stroke: var(--neutral-200);
+    stroke-width: 1;
+    rx: 4;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+/* Grid lines styling */
+.grid-line {
+    stroke: var(--neutral-100);
+    stroke-width: 1;
+}
+
+/* Axis styling */
+.axis-line {
+    stroke: var(--neutral-300);
+    stroke-width: 1.5;
+}
+
+/* Data line styling */
+.data-line {
+    stroke: var(--primary-500);
+    stroke-width: 2.5;
+    fill: none;
+}
+
+.data-line.target {
+    stroke: var(--neutral-400);
+    stroke-dasharray: 4, 4;
+}

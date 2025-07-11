@@ -1,0 +1,100 @@
+/**
+  * CSS for the App component
+  */
+
+/* Remove any flex or centering properties from the root level */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+  /* Add space between heading and buttons */
+}
+
+button {
+  margin: 10px;
+  /* Add spacing between the buttons */
+}
+
+/* Center the button wrapper and ensure proper spacing */
+.button-wrapper {
+  display: flex;
+  gap: 20px;
+  /* Space between buttons */
+  justify-content: center;
+  /* Center horizontally */
+  margin-top: 20px;
+  /* Space between the heading and the buttons */
+}
+
+/* Keep button styles but remove centering */
+.role-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.role-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Update container styles to use full width */
+.container {
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+.theme-switcher-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.dashboard-action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--primary-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dashboard-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: var(--primary-50);
+}
+
+.dashboard-action-button .icon {
+  font-size: 1.25rem;
+}

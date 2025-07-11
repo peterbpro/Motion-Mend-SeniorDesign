@@ -1,0 +1,3 @@
+DataType=Quaternion
+endheader
+time	pelvis_imu	femur_r_imu	tibia_r_imu	femur_l_imu	tibia_l_imu
